@@ -1,0 +1,30 @@
+@import 'pomodoro';
+@import 'stopwatch';
+@import 'musicWidget';
+@import 'body';
+@import 'tasklist';
+@import 'kanban';
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 1fr 0 repeat(4, 1fr) 0;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    }
+    
+    .Header {
+      grid-area: 1 / 1 / 2 / 8;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      
+    }
+    
+    .Header ul li { 
+      grid-area: 1 / 1 / 2 / 8;
+      display: inline-block;
+      justify-content: flex-end;
+      margin: 10px;
+      color: var(--light);
+    }

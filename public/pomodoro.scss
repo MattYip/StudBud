@@ -1,0 +1,97 @@
+:root {
+	--dark: #374151;
+	--darker: #1F2937;
+	--darkest: #111827;
+	--grey: #6B7280;
+	--pink: #EC4899;
+	--purple: #8B5CF6;
+	--light: #EEE;
+    --yellow: #ffbe6a;
+    --red: #ee7d90;
+    --green: #54cbb5;
+}
+
+* {
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+/* Pomodoro Timer */
+.pomodoro button {
+    cursor: pointer;
+}
+
+.pomodoro {
+    display: grid;
+    justify-items: center;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    grid-template-areas:
+    "add sub"
+    "timer timer timer"
+	"reset stop start";
+}
+
+.pomodoro .add {
+
+    grid-area: add;
+    font-size: 1.2em;
+    color: var(--white);
+    border-color: var(--dark);
+    background-color: var(--dark);
+    border-radius: 10px;
+    padding: 2.5px;
+}
+
+.pomodoro .sub {
+
+    grid-area: sub;
+    font-size: 1.2em;
+    color: var(--white);
+    border-color: var(--dark);
+    background-color: var(--dark);
+    border-radius: 10px;
+    padding: 2.5px;
+}
+
+.pomodoro .timer {
+    grid-area: timer;
+    font-size: 2em;
+    color: black;
+}
+
+.pomodoro .reset {
+
+    grid-area: reset;
+    font-size: 1.2em;
+    color: var(--white);
+    border-color: var(--yellow);
+    background-color: var(--yellow);
+    border-radius: 10px;
+    padding:2.5px;
+}
+
+.pomodoro .stop {
+
+    grid-area: stop;
+    font-size: 1.2em;
+    color: var(--white);
+    border-color: var(--red);
+    background-color: var(--red);
+    border-radius: 10px;
+    padding: 2.5px;
+}
+
+.pomodoro .start {
+    grid-area: start;
+    font-size: 1.2em;
+    color: var(--white);
+    border-color: var(--green);
+    background-color: var(--green);
+    border-radius: 10px;
+    padding: 2.5px;
+}
+
+
+

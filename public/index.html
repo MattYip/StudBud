@@ -3,46 +3,161 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
+    <title>StudBud</title>
+    <link href="scss.css" rel="stylesheet" type="text/css" />
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <form id="taskform">
-      <label for="task">Task:</label>
-      <input type="text" name="task" id="taskInput">
+    <div class="parent">
+      <div class="Header">
+        <ul>
+          <li> Logo </li>
+          <li> Quote</li>
+          <li> <a href="test-popup" class="open-popup-link">Music</a> </li>
+          <li> Stopwatch </li>
+        </ul>
+      </div>
+  
+  <!-- PopupMusic Player -->
+      
+      <!-- Popup itself -->
+  <div id="test-popup" class="white-popup mfp-hide">
+    <audio src="" id="hidden-player" autoplay></audio>
+    <div id="player">
+      <img src="" class="coverr" alt="" height="100" width="100" />
+      <div class="player-song">
+        <div class="title"></div>
+        <div class="artist"></div>
+        <progress value="0" max="1"></progress>
+        <div class="timestamps">
+          <div class="time-now">0:00:00</div>
+          <div class="time-finish">0:00:00</div>
+        </div>
+        <div class="actions">
+          <div class="prev">
+            <i class="material-icons"><</i>
+          </div>
+          <div class="play">
+            <a class="play-button paused" href="#">
+              <div class="left"></div>
+              <div class="right"></div>
+              <div class="triangle-1"></div>
+              <div class="triangle-2"></div>
+            </a>
+          </div>
+          <div class="next">
+            <i class="material-icons">></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+      
+      
+    <div class="Stopwatch">
+      <h2> Stopwatch </h2>
+      <div class="Timer"> 
+        00:00:00 
+      </div>
+      <div class = "control">
+        <button onclick="start()"> Start </button>
+        <button onclick="stop()"> Stop </button>
+        <button onclick="reset()"> Reset </button>
+      </div>
+    </div>
+    <script src="stopwatch.js"></script>
+      
+      <div class="Pomodoro">
+        <h2> Pomodoro </h2>
+  <!--       <div class="Timer"> 
+          <span class="minutes">00</span>
+          <span class=":">:</span> 
+          <span class="seconds">00</span>
+        </div>
+        <button type="button" class = "play">
+          <span class="startButton"> Start </span> 
+        </button>
+        <button type="button" class = "reset">
+          <span class="resetButton"> Reset </span> 
+        </button>
+        </div> -->
+      </div>
+      
+      <div class="TaskList">
+        <h2>Task List</h2>
+            <!-- Tasklist -->
+          <div id = "taskManager">
+            <form id="taskform">
+              <label for="task">Task:</label>
+              <input type="text" name="task" id="taskInput">
+      
+              <br>
+            <!-- Date input -->
+              <label for="dueDate">Due Date: </label>
+              <input type="date" name="dueDate" id="dueDateInput">
+              
+              <br>
+      
+            <!-- Time input -->
+            <label for="completionTime">Completion Time: </label>
+              <input type="time" name="completionTime" id="completionTimeInput">
+      
+              <br>
+      
+            <label for="estimatedTime">Estimated completion time (in mins):</label>
+            <input type="number" name="estimatedTime" id="estimatedTimeInput">
+            <!-- Priority -->
+            
+            <br>
+      
+            <label for="priority">Task Priority:</label>
+            <select name="prority" id="priorityInput">
+              <option value="">Select one</option>
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+            </select>
+      
+            <br>
+      
+              <button type="submit">Submit</button>
+            </form>
+              <div id="tasklist">
+              <p id = "emptyList" > You have not added any tasks yet</p> 
+              <ul></ul>
+              </div>
+            <script src="script.js"></script>
+      
+          </div>
+      </div>
+      
+      
 
-      <br>
-    <!-- Date input -->
-      <label for="dueDate">Due Date: </label>
-      <input type="date" name="dueDate" id="dueDateInput">
-      <br>
-    <!-- Time input -->
-    <label for="completionTime">Completion Time: </label>
-      <input type="time" name="completionTime" id="completionTimeInput">
+        <div class="Kanban-Board">
+          <h2>Kanban Board</h2>
+          <div class="kanbanColumn">
+             <div class="kanbanColTitle"> Not Started</div>
+             <div class="kanbanItem"></div>
+              <div contenteditable class="itemInput"> i.e. Catch up on Readings</div>
+            <div class="taskItems"></div>
+            <button type="button" class="addItem"> + </button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="Image">
+          <h2> Welcome Back, User </h2>
+        <!-- call user-defined getRandomImage function after 2 seconds -->    
+        <button onclick = "setInterval(getRandImg, 2000)"> Calming Image </button>
+        <br> <br>  
+        <span id="result" align="center"> </span>   
+            
+      </div>
+    </div>
 
-      <br>
 
-    <label for="estimatedTime">Estimated completion time (in mins):</label>
-    <input type="number" name="estimatedTime" id="estimatedTimeInput">
-    <!-- Priority -->
-    <br>
+<script src="script.js"></script>
+</body>
 
-    <label for="priority">Task Priority:</label>
-    <select name="prority" id="priorityInput">
-      <option value="">Select one</option>
-      <option value="Low">Low</option>
-      <option value="Medium">Medium</option>
-      <option value="High">High</option>
-    </select>
-
-    <br>
-
-      <button type="submit">Submit</button>
-    </form>
-    <ul id="tasklist">
-    </ul>
-    <script src="script.js"></script>
-    <!-- Swap the scripts to see the working solution -->
-    <!-- <script src="solution.js"></script> -->
-  </body>
 </html>
+    
