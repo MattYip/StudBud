@@ -1,23 +1,24 @@
-// Stopwatch
+// Pomodoro Timer JS functionality
 var sec = 00, min = 00, hour = 00;
-var timer;
+var PomTimer;
 var startedTimer = false;
 var isPaused = false;
 var check = null;
 
-var stopwatchElement = document.querySelector('.Timer')
+var pomodoroElement = document.querySelector('.PomTimer')
 
-function startStopWatch() {
+function startPomodoro() {
     isPaused = false
     if (startedTimer == false) {
         startedTimer = true;
-        timer = setInterval(runStopWatch, 1000)
+        timer = setInterval(runPomodoro, 1000)
     }
 }
 
-function runStopWatch() {
+// Timer counting 
+function runPomodoro() {
     if (!isPaused) {
-        stopwatchElement.textContent = hour + ":" + min + ":" + sec;
+        pomodoroElement.textContent = hour + ":" + min + ":" + sec;
         sec++
         if (sec == 60) {
             sec = 0;
@@ -31,15 +32,16 @@ function runStopWatch() {
 }
 
 // how to stop timer
-function stopStopWatch() {
+function stopPomodoro() {
     isPaused = true
 }
 
-function resetStopWatch() {
+//reseting timer
+function resetPomodoro() {
     if (startedTimer == true) {
         sec = 0;
         min = 0;
         hour = 0;
-        stopwatchElement.textContent = hour + ":" + min + ":" + sec;
+        pomodoroElement.textContent = hour + ":" + min + ":" + sec;
     }
 }
