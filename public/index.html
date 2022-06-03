@@ -13,39 +13,37 @@
 
 <body style="background-color:#8B5CF6">
 
-<!-- Navbar Header Elements -->
+  <!-- Navbar Header Elements -->
   <div class="Header">
     <ul>
       <li> <img src="StudBudLogo.png" alt="StudBud Logo"> </li>
-      <li> Quote </li>
-      <li> <a href="test-popup" class="open-popup-link">Music</a> </li>
-      <li> Stopwatch </li>
     </ul>
   </div>
 
   <div class="container">
     <div class="row">
       <div class="col-sm-5">
-      <div class="Image">
-        <h2> Welcome Back, User </h2>
-        <!-- Pressing the button to call getRandImg function after 2 seconds -->
-        <button onclick="getRandImg()"> Calming Image </button>
-        <br> <br>
-        <span id="result" align-item="center"> </span>
+        <div class="Image">
+          <h2> Welcome Back, User </h2>
+          <!-- Pressing the button to call getRandImg function after 2 seconds -->
+          <button onclick="getRandImg()" class="btn btn-dark"> Calming Image </button>
+          <br> <br>
+          <span id="result" align-item="center"> </span>
+        </div>
       </div>
-    </div>  
-    <script src="image.js"></script>
+      <script src="script.js"></script>
 
-      <div id = "timer" class="col-sm-3">
+      <div id="timer" class="col-sm-3">
         <div class="Stopwatch">
           <h2> Stopwatch </h2>
           <div class="Timer">
             00:00:00
           </div>
           <div class="control">
-            <button onclick="startStopWatch()"> Start </button>
-            <button onclick="stopStopWatch()"> Stop </button>
-            <button onclick="resetStopWatch()"> Reset </button>
+          <!-- Implementing Bootsrap buttons in class -->
+            <button type="button" class="Start btn btn-success" onclick="startStopWatch()"> Start </button>
+            <button class="Stop btn btn-danger" onclick="stopStopWatch()"> Stop </button>
+            <button class="Reset btn btn-warning" onclick="resetStopWatch()"> Reset </button>
           </div>
         </div>
         <script src="stopwatch.js"></script>
@@ -53,101 +51,178 @@
         <div class="Pomodoro">
           <h2> Pomodoro </h2>
           <div class="PomTimer">
-            00:00:00
+            00:00
           </div>
           <div class="controlPom">
-            <button onclick="startPomodoro()"> Start </button>
-            <button onclick="stopPomodoro()"> Stop </button>
-            <button onclick="resetPomodoro()"> Reset </button>
+            <button class="Set btn btn-primary" onclick="setPomodoro()"> Set </button>
+            <button class="Start btn btn-success" onclick="startPomodoro()"> Start </button>
+            <button class="Reset btn btn-warning" onclick="resetPomodoro()"> Reset </button>
           </div>
         </div>
       </div>
       <script src="pomodoro.js"></script>
 
-      <div class="col-sm-3">
-        <div class = "musicPlayer">
-        <h2> Music Player </h2>
-      </div>
+      <div class="col-sm-4">
+        <audio src="" id="audio"></audio>
+
+        <div class="musicPlayer">
+          <h2> Music Player </h2>
+          <div class="coverArt"></div>
+          <div class="slider">
+            <input type="range" value="0" class="seekBar">
+            <span class="currentTime">00:00:00</span>
+            <span class="songDuration">00:00:00</span>
+          </div>
+          <h4 class="songName">song one</h1>
+            <p class="artistName">artist</p>
+
+            <div class="musicControls">
+              <button class="button backwardButton">
+                < </button>
+                  <button class="playButton pause">
+                    <span></span>
+                    <span></span>
+                  </button>
+                  <button class="button forwardButton">></button>
+            </div>
+
+        </div>
+        <script src="songFiles.js"></script>
+        <script src="musicWidget.js"></script>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-sm-6">
-      <div class = "kanban">
-        <h2>Kanban Board</h2>
-        <div class="kanbanColumn">
-          <div class="kanbanColTitle"> Not Started</div>
-          <div class="kanbanItem"></div>
-          <div contenteditable class="itemInput"> i.e. Catch up on Readings</div>
-          <div class="taskItems"></div>
-          <button type="button" class="addItem"> + </button>
-        </div>
-      </div>
+      <div class="col-sm-3">
+        <form id="readingform">
+          <h2>Referencing Generator</h2>
+          <p>(APA 6th Specifically)</p>
+          <label for="source">Source Name:</label>
+          <input type="text" name="source" id="sourceInput">
+
+          <br>
+
+          <!-- Year Input -->
+          <label for="year">Year:</label>
+          <input type="text" name="year" id="yearInput">
+
+          <br>
+
+          <!-- Author Input -->
+          <label for="author">Author:</label>
+          <input type="text" name="author" id="authorInput">
+
+          <br>
+
+          <!-- Link input -->
+          <label for="link">Link:</label>
+          <input type="text" name="link" id="linkInput">
+
+          <br>
+
+          <button type="submit" class="btn btn-dark">Submit</button>
+        </form>
       </div>
 
       <div class="col-sm-3">
-       
-        <!-- Tasklist -->
-        <div id="taskManager">
-          <form id="taskform">
-            <h2>Task List</h2>
-            <label for="task">Task:</label>
-            <input type="text" name="task" id="taskInput">
-
-            <br>
-
-            <!-- Date input -->
-            <label for="dueDate">Due Date: </label>
-            <input type="date" name="dueDate" id="dueDateInput">
-
-            <br>
-
-            <!-- Time input -->
-            <label for="completionTime">Completion Time: </label>
-            <input type="time" name="completionTime" id="completionTimeInput">
-
-            <br>
-
-            <label for="estimatedTime">Estimated completion time (in mins):</label>
-            <input type="number" name="estimatedTime" id="estimatedTimeInput">
-            <!-- Priority -->
-
-            <br>
-
-            <label for="priority">Task Priority:</label>
-            <select name="prority" id="priorityInput">
-              <option value="">Select one</option>
-              <option value="Low">Low</option>
-              <option value="Medium">Medium</option>
-              <option value="High">High</option>
-            </select>
-
-            <br>
-
-            <button type="submit">Submit</button>
-          </form>
-        </div>
-
-        <div class = "row">
-
-        </div>
-      </div>
-
-      <div class="col-sm-3">
-        <div id="tasklist">
-          <p id="emptyList"> You have not added any tasks yet</p>
+        <div id="readinglist">
+          <p id="emptyList"> No readings yet! </p>
           <ul></ul>
         </div>
-        <script src="script.js"></script>
+        <script src="Reading List.js"></script>
       </div>
 
+      <div class="col-sm-6">
+        <!-- Tasklist -->
+        <form id="taskform">
+          <h2>Task List</h2>
+          <label for="task">Task:</label>
+          <input type="text" name="task" id="taskInput">
 
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
-        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
-        crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
-        integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
-        crossorigin="anonymous"></script>
+          <br>
+
+          <!-- Date input -->
+          <label for="dueDate">Due Date: </label>
+          <input type="date" name="dueDate" id="dueDateInput">
+
+          <br>
+
+          <!-- Time input -->
+          <label for="completionTime">Completion Time: </label>
+          <input type="time" name="completionTime" id="completionTimeInput">
+
+          <br>
+
+          <label for="estimatedTime">Estimated completion time (in mins):</label>
+          <input type="number" name="estimatedTime" id="estimatedTimeInput">
+          <!-- Priority -->
+
+          <br>
+
+          <label for="priority">Task Priority:</label>
+          <select name="prority" id="priorityInput">
+            <option value="">Select one</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+
+          <br>
+
+          <button type="submit">Submit</button>
+        </form>git
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="kanban">
+            <h2 class="kanbanName">Kanban Board</h2>
+
+            <br>
+            <!-- Not Started -->
+            <div class="col-sm-4">
+              <div class="kanbanColumn">
+                <div class="kanbanColTitle NS"> Not Started</div>
+                <div class="kanbanItem"></div>
+
+                <div id="tasklist">
+                  <p id="emptyList"> No tasks added yet</p>
+                  <ul></ul>
+                  <script src="script.js"></script>
+                </div>
+
+                <div class="taskItems"></div>
+                <button type="button" class="addItem"> + </button>
+              </div>
+            </div>
+            <!-- WIP -->
+            <div class="col-sm-4">
+              <div class="kanbanColumn">
+                <div class="kanbanColTitle WIP"> Work In Progress</div>
+                <div class="kanbanItem"></div>
+                <div class="taskItems"></div>
+                <button type="button" class="addItem"> + </button>
+              </div>
+            </div>
+            <!-- Complete -->
+            <div class="col-sm-4">
+              <div class="kanbanColumn">
+                <div class="kanbanColTitle C"> Completed</div>
+                <div class="kanbanItem"></div>
+                <div class="taskItems"></div>
+                <button type="button" class="addItem"> + </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+          integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+          crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+          integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+          crossorigin="anonymous"></script>
 </body>
 
 <script src="script.js"></script>
