@@ -5,5 +5,22 @@
     padding: 40px;
     background-color: var(--light);
     border-radius: 65px;
-    margin-top: 84px;
+    margin-top: 20px;
+}
+
+.PomTimer{
+    border-radius: 10px;
+    background-color: var(--blue);
+    padding: 20px;
+    padding-left: 20px;
+    font-size: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+.controlPom {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
