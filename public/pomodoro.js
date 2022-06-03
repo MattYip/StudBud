@@ -1,47 +1,31 @@
 // Pomodoro Timer JS functionality
-var sec = 00, min = 00, hour = 00;
 var PomTimer;
-var startedTimer = false;
-var isPaused = false;
-var check = null;
+var sec = 0;
+var min = 0;
 
 var pomodoroElement = document.querySelector('.PomTimer')
 
-function startPomodoro() {
-    isPaused = false
-    if (startedTimer == false) {
-        startedTimer = true;
-        timer = setInterval(runPomodoro, 1000)
-    }
-}
+//Setting time
+function setPomodoro() {
+    const inputTime = prompt("Enter number of minutes:");
+    var PomTimer = document.getElementsByClassName("PomTimer")[0];
 
-// Timer counting 
-function runPomodoro() {
-    if (!isPaused) {
-        pomodoroElement.textContent = hour + ":" + min + ":" + sec;
-        sec++
-        if (sec == 60) {
-            sec = 0;
-            min++
-        }
-        if (min == 60) {
-            hour = 0;
-            hour++
-        }
-    }
-}
+    secondsRemaining = inputTime * 60
 
-// how to stop timer
-function stopPomodoro() {
-    isPaused = true
-}
+    // turn the seconds into mm:ss
+    var min = Math.floor(secondsRemaining / 60);
+    var sec = secondsRemaining - (min * 60);
 
-//reseting timer
-function resetPomodoro() {
-    if (startedTimer == true) {
-        sec = 0;
-        min = 0;
-        hour = 0;
-        pomodoroElement.textContent = hour + ":" + min + ":" + sec;
+    //add a leading zero if less than 10 seconds
+    if (sec < 10) {
+        sec = `0${sec}`;
     }
+    if (min < 10) {
+        min = `0${min}`;
+    }
+
+    // concatenate with colon
+    var time = min.toString() + ":" + sec;
+
+    PomTimer.innerHTML = time;
 }
