@@ -47,6 +47,8 @@ The types of music I play incude:
 With inspiration from Modern Web (2021), I was inspired and assisted by this tutorial to develop a music player with an animating play button for usability.
 The player has been modified from the orgininal prototype that there is no option to access spotify. I would like to add this feature back in with future developments.
 
+**Upon dealing with issues with uploading the music files, I could only manage to add the rain sounds mp3 file, as the other two were too big.**
+
 # Reading List
 
 **Improvements:**
