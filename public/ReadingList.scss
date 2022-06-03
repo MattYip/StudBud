@@ -1,0 +1,42 @@
+#readingform {
+    padding: 40px;
+    background-color: var(--light);
+    border-radius: 65px;
+  
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+      font-family: "Poppins", sans-serif;
+  }
+
+  #readingform button {
+  display: flex;
+  justify-content: center;
+  border-radius: 65px;
+  min-width: 50%;
+  border: none;
+  padding: 5px;
+  background-color: var(--dark);
+  color:var(--light)
+}
+
+#readinglist {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+
+    padding: 40px;
+    background-color: var(--light);
+    border-radius: 65px;
+    border-color: var(--light);
+  }
+
+  Input{
+    padding: 10px;
+    box-sizing: box border;
+    background: white;
+    border-radius: 65px;
+  /*   to identify user input */
+    cursor: pointer;
+  }
