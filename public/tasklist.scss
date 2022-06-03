@@ -10,13 +10,32 @@
   }
 
 #tasklist {
-    padding: 40px;
-    background-color: var(--light);
-    border-radius: 65px;
-  
     display: flex;
     flex-direction: column;
     width: 100%;
-      font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif;
+    /*   to identify user input */
+    cursor: pointer;
   }
+
+  Input{
+    padding: 10px;
+    box-sizing: box border;
+    background: white;
+    border-radius: 65px;
+  /*   to identify user input */
+    cursor: pointer;
+  }
+
+  #taskform button {
+    display: flex;
+    justify-content: center;
+    border-radius: 65px;
+    width: 25%;
+    border: none;
+    padding: 5px;
+    background-color: var(--dark);
+    color:var(--light)
+  }
+
   
