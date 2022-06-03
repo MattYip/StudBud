@@ -17,12 +17,16 @@ function startStopWatch() {
 
 function runStopWatch() {
     if (!isPaused) {
-        stopwatchElement.textContent = hour + ":" + min + ":" + sec;
+        //appends 0's to front of the timer element for visual result
+        stopwatchElement.textContent = hour.toLocaleString(undefined,{minimumIntegerDigits: 2}) + ":" + min.toLocaleString(undefined,{minimumIntegerDigits: 2}) + ":" + sec.toLocaleString(undefined,{minimumIntegerDigits: 2});
+        //seconds increase
         sec++
+        //if seconds reach 0, minute is added
         if (sec == 60) {
             sec = 0;
             min++
         }
+        //if minutes reach 0, hour is added
         if (min == 60) {
             hour = 0;
             hour++
@@ -34,12 +38,12 @@ function runStopWatch() {
 function stopStopWatch() {
     isPaused = true
 }
-
+//reset timer to 00:00:00 
 function resetStopWatch() {
     if (startedTimer == true) {
         sec = 0;
         min = 0;
         hour = 0;
-        stopwatchElement.textContent = hour + ":" + min + ":" + sec;
+        stopwatchElement.textContent = `0${hour}` + ":" + `0${min}` + ":" + `0${sec}`
     }
 }
