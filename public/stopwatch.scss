@@ -10,5 +10,24 @@
 .button {
     color: white;
     background-color: var(--red);
-    
+    flex-wrap: wrap;
+}
+
+.Timer {
+    border-radius: 10px;
+    background-color: var(--blue);
+    padding: 20px;
+    font-size: 50px;
+    width: 100%;
+}
+
+.coverArt {
+    width: 100%;
+}
+
+.control {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
 }
